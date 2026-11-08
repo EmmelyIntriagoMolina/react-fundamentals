@@ -1,5 +1,4 @@
-import Reloj from './components/Reloj'
-import Usuarios from './components/Usuarios'
+import Usuarios from "./components/Usuarios"
 
 function App() {
 
