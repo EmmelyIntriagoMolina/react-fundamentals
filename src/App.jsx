@@ -1,10 +1,10 @@
-import Usuarios from "./components/Usuarios"
+import Cronometro from "./components/Cronometro"
 
 function App() {
 
   return (
     <>
-      <Usuarios />
+      <Cronometro />
     </>
   )
 }
