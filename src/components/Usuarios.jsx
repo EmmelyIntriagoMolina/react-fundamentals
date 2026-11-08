@@ -6,10 +6,14 @@ function Usuarios() {
     const [usuarios, setUsuarios] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
+    const [actualizar, setActualizar] = useState(0)
 
     useEffect(() => {
 
         const obtenerUsuarios = async () => {
+            setLoading(true)
+            setError(null)
+
             try {
                 const response = await fetch('https://jsonplaceholder.typicode.com/users')
                 if (!response.ok) {
@@ -25,11 +29,16 @@ function Usuarios() {
             } 
         }
         obtenerUsuarios()
-    }, [])
+    }, [actualizar])
  
     return ( 
         <div className="usuarios-container">
             <h2 className="usuarios-titulo">Directorio de usuarios</h2>
+
+            <button onClick={() => setActualizar((prev) => prev + 1)}>
+                Actualizar usuarios
+            </button>
+
             <p className="usuarios-subtitulo">
               Usuarios registrados en el sistema
             </p>
