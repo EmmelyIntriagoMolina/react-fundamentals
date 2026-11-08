@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import "../css/Usuarios.css"
+import { obtenerDatos } from '../helpers/api';
+
 
 function Usuarios() { 
 
@@ -9,26 +11,35 @@ function Usuarios() {
     const [actualizar, setActualizar] = useState(0)
 
     useEffect(() => {
+        
+        const controller = new AbortController();
 
         const obtenerUsuarios = async () => {
             setLoading(true)
             setError(null)
 
             try {
-                const response = await fetch('https://jsonplaceholder.typicode.com/users')
-                if (!response.ok) {
-                    throw new Error('Error al obtener los usuarios')
-                }
-                const data = await response.json()
+                const data = await obtenerDatos(
+                    'https://jsonplaceholder.typicode.com/users',
+                    controller.signal
+                )
                 setUsuarios(data)
   
             } catch (error) {
-                setError(error.message)
+                if (error.name !== 'AbortError') {
+                    setError(error.message)
+                }
             } finally {
-                setLoading(false)
+                if (!controller.signal.aborted) {
+                    setLoading(false);
+                }
             } 
         }
         obtenerUsuarios()
+
+        return () => {
+            controller.abort();
+        };
     }, [actualizar])
  
     return ( 
