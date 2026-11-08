@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import './Usuarios.css'
+import "../css/Usuarios.css"
 
 function Usuarios() { 
 
