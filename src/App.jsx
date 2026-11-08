@@ -1,5 +1,5 @@
-import Reloj from './assets/components/Reloj'
-import Usuarios from './assets/components/Usuarios'
+import Reloj from './components/Reloj'
+import Usuarios from './components/Usuarios'
 
 function App() {
 
