@@ -1,10 +1,10 @@
-import Compra from "./components/Compra"
+import Productos from "./components/Productos"
 
 function App() {
 
   return (
     <>
-      <Compra />
+      <Productos />
     </>
   )
 }

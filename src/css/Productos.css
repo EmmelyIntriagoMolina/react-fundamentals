@@ -1,0 +1,78 @@
+.productos-container {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    font-family: Arial, sans-serif;
+}
+
+.productos-container h2 {
+    margin-bottom: 8px;
+    color: #1e293b;
+    font-size: 28px;
+}
+
+.productos-subtitulo {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+.productos-buscador {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+    margin-bottom: 25px;
+}
+
+.productos-buscador:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.productos-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.producto-card {
+    padding: 20px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.producto-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.producto-card h3 {
+    color: #334155;
+    font-size: 17px;
+    margin: 0 0 12px;
+}
+
+.producto-precio {
+    color: #4f46e5;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.productos-vacio {
+    grid-column: 1 / -1;
+    padding: 25px;
+    text-align: center;
+    color: #64748b;
+    background: #f8fafc;
+    border-radius: 10px;
+}
